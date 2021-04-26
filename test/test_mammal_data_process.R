@@ -2,8 +2,8 @@ source("../mammal_data_process.R")
 library(testthat)
 
 
-good <- read.csv("good.csv", na.strings = "-999", stringsAsFactors = FALSE)
-df <- read_mass_data("MOMv3.3.txt", header =FALSE, column_names = c("continent", "status", "order", "family","genus", "species", "log10mass", "mass", "ref"), na.strings = "-999")
+good <- read.csv("../good.csv", na.strings = "-999", stringsAsFactors = FALSE)
+df <- read_mass_data("../MOMv3.3.txt", header =FALSE, column_names = c("continent", "status", "order", "family","genus", "species", "log10mass", "mass", "ref"), na.strings = "-999")
 df <- data_error_correct(df)
 final_df <- calculate_mean_masses(df)
 
